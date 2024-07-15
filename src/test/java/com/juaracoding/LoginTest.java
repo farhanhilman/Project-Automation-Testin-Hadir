@@ -1,5 +1,6 @@
 package com.juaracoding;
 
+import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.pages.DashboardPage;
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.utils.Constant;
@@ -10,10 +11,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 public class LoginTest {
 
+    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
     private static WebDriver driver;
 
     private static ExtentTest extentTest;
@@ -37,39 +41,72 @@ public class LoginTest {
 
     @When("I enter a valid email and password")
     public void i_enter_a_valid_email_and_password(){
-        loginPage.setEmail("admin@hadir.com");
-        loginPage.setPassword("admin@hadir");
+        loginPage.setEmailPassword("admin@hadir.com", "admin@hadir");
         extentTest.log(LogStatus.PASS, "I enter a valid email and password");
     }
 
     @When("I enter an invalid email and valid password")
     public void i_enter_an_invalid_email_and_valid_password(){
+        DriverSingleton.delay(3);
         loginPage.setEmailPassword("adminsa@hadir.com", "admin@hadir");
     }
 
     @When("I enter an invalid email not input symbol '@' and valid password")
     public void i_enter_an_invalid_email_not_input_symbol(){
+        loginPage.clearEmailPassword();
         loginPage.setEmailPassword("adminhadir.com", "admin@hadir");
     }
 
     @When("I enter a valid email and invalid password")
     public void i_enter_a_valid_email_and_invalid_password(){
+        loginPage.clearEmailPassword();
         loginPage.setEmailPassword("admin@hadir.com", "admin");
     }
 
     @When("I enter an valid email and not input password")
+    public void i_enter_an_valid_and_not_input_password(){
+        loginPage.clearEmailPassword();
+        loginPage.setEmail("admin@hadir.com");
+    }
 
+    @When("I enter an invalid password without email")
+    public void i_enter_an_invalid_password_without_email(){
+        loginPage.clearEmailPassword();
+        loginPage.setPassword("admin@hadir");
+    }
+
+    @When("I am not input email and password")
+    public void i_am_not_input_email_and_password(){
+        loginPage.clearEmailPassword();
+        loginPage.clickSubmitButton();
+    }
 
     @And("I click the submit button")
     public void i_click_the_submit_button(){
+        DriverSingleton.delay(1);
         loginPage.clickSubmitButton();
         extentTest.log(LogStatus.PASS, "I click the submit button");
     }
 
     @Then("I should be redirected to the dashboard page")
     public void i_should_be_redirected_to_the_dashboard_page(){
-        Assert.assertEquals(dashboardPage.getTxtLogo(),"HADIR");
+        DriverSingleton.delay(5);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/dashboards/pending");
+        DriverSingleton.delay(3);
+        dashboardPage.logout();
         extentTest.log(LogStatus.PASS, "I should be redirected to the dashboard page");
+    }
+
+    @Then("I should see an error message")
+    public void i_should_see_an_error_message(){
+        DriverSingleton.delay(3);
+        loginPage.isErrorMessage();
+    }
+
+    @Then("I should see an error message '@'")
+    public void i_should_see_an_error_message_symbol(){
+        DriverSingleton.delay(3);
+        loginPage.isErrorNotification();
     }
 
 }
