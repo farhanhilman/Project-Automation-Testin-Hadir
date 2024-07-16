@@ -18,10 +18,10 @@ public class DashboardPage {
     @FindBy(xpath = "//img[@alt='Logo Hadir']")
     private WebElement hadirLogo;
 
-    @FindBy(xpath = "//div[@class='MuiBox-root css-6eu2y8']//*[name()='svg']")
+    @FindBy(xpath = "//button[@aria-label='menu']//div[@class='MuiBox-root css-70qvj9']")
     private WebElement profileButton;
 
-    @FindBy(xpath = "    @FindBy(xpath = \"//div[@class='MuiBox-root css-6eu2y8']//*[name()='svg']//*[name()='g']//*[name()='polyline' and contains(@points,'6 9 12 15 ')]\")")
+    @FindBy(xpath = "//button[normalize-space()='Logout']")
     private WebElement logoutButon;
 
     public void clickProfileButton(){
@@ -38,8 +38,8 @@ public class DashboardPage {
         clickLogoutButton();
     }
 
-    public String getTxtLogo(){
-        return hadirLogo.getText();
+    public boolean isLogo(){
+        return hadirLogo.isDisplayed();
     }
 
 }

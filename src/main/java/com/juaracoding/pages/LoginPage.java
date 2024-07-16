@@ -78,8 +78,8 @@ public class LoginPage {
         loginNotification.getText();
     }
 
-    public String getLoginLogo(){
-        return loginLogo.getText();
+    public boolean isLoginLogo(){
+        return loginLogo.isDisplayed();
     }
 
 }

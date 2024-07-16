@@ -18,6 +18,7 @@ import org.testng.Assert;
 public class LoginTest {
 
     private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
+
     private static WebDriver driver;
 
     private static ExtentTest extentTest;
@@ -53,32 +54,27 @@ public class LoginTest {
 
     @When("I enter an invalid email not input symbol '@' and valid password")
     public void i_enter_an_invalid_email_not_input_symbol(){
-        loginPage.clearEmailPassword();
         loginPage.setEmailPassword("adminhadir.com", "admin@hadir");
     }
 
     @When("I enter a valid email and invalid password")
     public void i_enter_a_valid_email_and_invalid_password(){
-        loginPage.clearEmailPassword();
         loginPage.setEmailPassword("admin@hadir.com", "admin");
     }
 
     @When("I enter an valid email and not input password")
     public void i_enter_an_valid_and_not_input_password(){
-        loginPage.clearEmailPassword();
         loginPage.setEmail("admin@hadir.com");
     }
 
     @When("I enter an invalid password without email")
     public void i_enter_an_invalid_password_without_email(){
-        loginPage.clearEmailPassword();
         loginPage.setPassword("admin@hadir");
     }
 
     @When("I am not input email and password")
     public void i_am_not_input_email_and_password(){
         loginPage.clearEmailPassword();
-        loginPage.clickSubmitButton();
     }
 
     @And("I click the submit button")
@@ -92,6 +88,7 @@ public class LoginTest {
     public void i_should_be_redirected_to_the_dashboard_page(){
         DriverSingleton.delay(5);
         Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/dashboards/pending");
+        dashboardPage.isLogo();
         DriverSingleton.delay(3);
         dashboardPage.logout();
         extentTest.log(LogStatus.PASS, "I should be redirected to the dashboard page");

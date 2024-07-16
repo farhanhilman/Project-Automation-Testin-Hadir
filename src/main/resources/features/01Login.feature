@@ -36,7 +36,6 @@ Feature: Login
     And I click the submit button
     Then I should see an error message
 
-
   Scenario: Failed login without email and password
     Given I am on the login page
     When I am not input email and password
