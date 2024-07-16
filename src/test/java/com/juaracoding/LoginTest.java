@@ -37,7 +37,6 @@ public class LoginTest {
         driver.get(Constant.URL);
         driver.manage().window().maximize();
         extentTest.log(LogStatus.PASS, "I am on the login page");
-
     }
 
     @When("I enter a valid email and password")

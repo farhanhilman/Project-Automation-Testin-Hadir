@@ -9,7 +9,8 @@ public enum ScenarioTests {
     T5("Failed login without input password"),
     T6("Failed login witout input email"),
     T7("Failed login without email and password"),
-    T8("Successful Logout");
+    T8("Successful Logout"),
+    T9("Pencarian izin terlambat berdasarkan nama");
 
     // T1 ... T100
 
