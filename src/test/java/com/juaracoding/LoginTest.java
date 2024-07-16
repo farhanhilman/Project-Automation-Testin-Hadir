@@ -89,8 +89,6 @@ public class LoginTest {
         DriverSingleton.delay(5);
         Assert.assertEquals(driver.getCurrentUrl(), "https://staging-hadir.ptkta.com/dashboards/pending");
         dashboardPage.isLogo();
-        DriverSingleton.delay(3);
-        dashboardPage.logout();
         extentTest.log(LogStatus.PASS, "I should be redirected to the dashboard page");
     }
 
