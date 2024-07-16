@@ -121,6 +121,11 @@ public class LaporanPage {
         endDateBox.sendKeys(endDate);
     }
 
+    public void setStartEndDate(String startDate, String endDate){
+        setStartDate(startDate);
+        setEndDate(endDate);
+    }
+
     public void clickSaveButton(){
         saveButton.click();
     }
