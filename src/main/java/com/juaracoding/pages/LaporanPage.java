@@ -46,6 +46,9 @@ public class LaporanPage {
     @FindBy(xpath = "//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium css-1k0lhp1']//*[name()='svg']")
     private WebElement filterButton;
 
+    @FindBy(id = "job_departement")
+    private WebElement filterBox;
+
     @FindBy(xpath = "//li[@id='job_departement-option-0']")
     private WebElement optionUnit;
 
@@ -79,13 +82,13 @@ public class LaporanPage {
     @FindBy(xpath = "//button[@title='Go to next page']")
     private WebElement goToNextPageButton;
 
-    @FindBy(xpath = "//button[@title='Go to last page']//*[name()='svg']")
+    @FindBy(xpath = "//button[@title='Go to last page']")
     private WebElement goToLastPageButton;
 
-    @FindBy(xpath = "//button[@title='Go to previous page']//*[name()='svg']")
+    @FindBy(xpath = "//button[@title='Go to previous page']")
     private WebElement goToPreviousPageButton;
 
-    @FindBy(xpath = "//button[@title='Go to first page']//*[name()='svg']")
+    @FindBy(xpath = "//button[@title='Go to first page']")
     private WebElement goToFirstPageButton;
 
     @FindBy(xpath = "//p[@class='MuiTablePagination-displayedRows css-kim0d']")
@@ -139,7 +142,7 @@ public class LaporanPage {
     }
 
     public void setFilter(String filter){
-        filterButton.sendKeys(filter);
+        filterBox.sendKeys(filter);
     }
 
     public void clickOptionUnit(){

@@ -38,8 +38,13 @@ public class LoginPage {
     @FindBy(xpath = "//label[@name='password']")
     private WebElement errorNotification;
 
+
     public void setEmail(String email){
         this.email.sendKeys(email);
+    }
+
+    public String getAtributteEmail(){
+        return email.getAttribute("type");
     }
 
     public void setPassword(String password){

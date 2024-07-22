@@ -49,31 +49,37 @@ public class LoginTest {
     public void i_enter_an_invalid_email_and_valid_password(){
         DriverSingleton.delay(3);
         loginPage.setEmailPassword("adminsa@hadir.com", "admin@hadir");
+        extentTest.log(LogStatus.PASS, "I enter an invalid email and valid password");
     }
 
     @When("I enter an invalid email not input symbol '@' and valid password")
     public void i_enter_an_invalid_email_not_input_symbol(){
         loginPage.setEmailPassword("adminhadir.com", "admin@hadir");
+        extentTest.log(LogStatus.PASS, "I enter an invalid email not input symbol '@' and valid password");
     }
 
     @When("I enter a valid email and invalid password")
     public void i_enter_a_valid_email_and_invalid_password(){
         loginPage.setEmailPassword("admin@hadir.com", "admin");
+        extentTest.log(LogStatus.PASS, "I enter a valid email and invalid password");
     }
 
     @When("I enter an valid email and not input password")
     public void i_enter_an_valid_and_not_input_password(){
         loginPage.setEmail("admin@hadir.com");
+        extentTest.log(LogStatus.PASS, "I enter an valid email and not input password");
     }
 
     @When("I enter an invalid password without email")
     public void i_enter_an_invalid_password_without_email(){
         loginPage.setPassword("admin@hadir");
+        extentTest.log(LogStatus.PASS, "I enter an invalid password without email");
     }
 
     @When("I am not input email and password")
     public void i_am_not_input_email_and_password(){
         loginPage.clearEmailPassword();
+        extentTest.log(LogStatus.PASS, "I am not input email and password");
     }
 
     @And("I click the submit button")
@@ -95,12 +101,14 @@ public class LoginTest {
     public void i_should_see_an_error_message(){
         DriverSingleton.delay(3);
         loginPage.isErrorMessage();
+        extentTest.log(LogStatus.PASS, "I should see an error message");
     }
 
     @Then("I should see an error message '@'")
     public void i_should_see_an_error_message_symbol(){
         DriverSingleton.delay(3);
         loginPage.isErrorNotification();
+        extentTest.log(LogStatus.PASS, "I should see an error message '@'");
     }
 
 }
