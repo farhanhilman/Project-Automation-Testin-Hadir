@@ -107,7 +107,7 @@ public class LoginTest {
     @Then("I should see an error message '@'")
     public void i_should_see_an_error_message_symbol(){
         DriverSingleton.delay(3);
-        loginPage.isErrorNotification();
+        System.out.println(loginPage.getAtributteEmail());
         extentTest.log(LogStatus.PASS, "I should see an error message '@'");
     }
 

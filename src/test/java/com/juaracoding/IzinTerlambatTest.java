@@ -38,114 +38,114 @@ public class IzinTerlambatTest {
         loginPage.login("admin@hadir.com", "admin@hadir");
         dashboardPage.clickLaporanMenu();
         dashboardPage.clickIzinTerlambatMenu();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Login dan buka halaman izin terlambat");
     }
 
     @Given("Buka halaman izin terlambat")
     public void buka_halaman_izin_terlambat(){
         driver.get(Constant.izinTerlambatURL);
         driver.manage().window().maximize();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Buka halaman izin terlambat");
     }
 
     @When("Input nama karyawan di field search")
     public void input_nama_karyawan_di_field_search(){
         laporanPage.setName("Farhan");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Input nama karyawan di field search");
     }
 
     @When("Klik tombol start date")
     public void klik_tombol_start_date(){
         laporanPage.clickStartDateButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol start date");
     }
 
     @When("Klik opsi page")
     public void klik_opsi_page(){
         laporanPage.clickRowsPerPage();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik opsi page");
     }
 
     @When("Klik ikon filter")
     public void klik_ikon_filter(){
         laporanPage.clickFilterButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik ikon filter");
     }
 
     @When("Klik tombol go to next page")
     public void klik_tombol_go_to_next_page(){
         laporanPage.clickGoToNextPageButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol go to next page");
     }
 
     @When("Klik tombol go to previous page")
     public void klik_tombol_go_to_previous_page(){
         DriverSingleton.delay(2);
         laporanPage.clickGoToPreviousPageButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol go to previous page");
     }
 
     @When("Klik tombol go to last page")
     public void klik_tombol_go_to_last_page(){
         DriverSingleton.delay(2);
         laporanPage.clickGoToLastPageButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol go to last page");
     }
 
     @When("Klik tombol go to first page")
     public void klik_tombol_go_to_first_page(){
         DriverSingleton.delay(2);
         laporanPage.clickGoToFirstPageButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol go to first page");
     }
 
     @When("Input nama karyawan yang tidak terdata di field search")
     public void input_nama_karyawan_yang_tidak_terdata_di_field_search(){
         laporanPage.setName("aaazzzzddd");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Input nama karyawan yang tidak terdata di field search");
     }
 
     @And("Klik tombol search")
     public void klik_tombol_search(){
         laporanPage.clickSearchButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol search");
     }
 
     @And("Klik tombol reset")
     public void klik_tombol_reset(){
         laporanPage.clickResetButton();
         DriverSingleton.delay(2);
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol reset");
     }
 
     @And("Atur tanggal mulai dan tanggal akhir")
     public void atur_tanggal_mulai_dan_tanggal_akhir(){
         laporanPage.setStartEndDate("Jul 11, 2024", "Jul 11, 2024");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Atur tanggal mulai dan tanggal akhir");
     }
 
     @And("Atur tanggal mulai dan tanggal akhir yang tidak valid")
     public void atur_tanggal_mulai_dan_tanggal_akhir_yang_tidak_valid(){
         laporanPage.setStartEndDate("Jul 11, 2028", "Jul 11, 2028");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Atur tanggal mulai dan tanggal akhir yang tidak valid");
     }
 
     @And("Pilih opsi page 5")
     public void pilih_opsi_page_5(){
         laporanPage.clickRowsPerPage5();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Pilih opsi page 5");
     }
 
     @And("Pilih opsi page 10")
     public void pilih_opsi_page_10(){
         laporanPage.clickRowsPerPage10();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Pilih opsi page 10");
     }
 
     @And("Pilih opsi page 25")
     public void pilih_opsi_page_25(){
         laporanPage.clickRowsPerPage25();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Pilih opsi page 25");
     }
 
     @And("Masukkan nama unit")
@@ -153,19 +153,19 @@ public class IzinTerlambatTest {
         laporanPage.setFilter("Software Quality Assurance");
         DriverSingleton.delay(1);
         laporanPage.clickOptionUnit();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Masukkan nama unit");
     }
 
     @And("Klik tombol terapkan")
     public void klik_tombol_terapkan(){
         laporanPage.clickTerapkanButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol terapkan");
     }
 
     @And("Klik tombol batal")
     public void klik_tombol_batal(){
         laporanPage.clickBatalButton();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Klik tombol batal");
     }
 
     @And("Masukkan nama unit yang tidak terdata")
@@ -173,31 +173,31 @@ public class IzinTerlambatTest {
         laporanPage.setFilter("test");
         DriverSingleton.delay(1);
         laporanPage.clickOptionUnit();
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Masukkan nama unit yang tidak terdata");
     }
 
     @Then("Menampilkan data izin terlambat seperti semula")
     public void menampilkan_data_izin_terlambat_seperti_semula(){
         Assert.assertEquals(laporanPage.getInformationPage(), "1-10 of 53");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Menampilkan data izin terlambat seperti semula");
     }
 
     @Then("Menampilkan nama karyawan yang dicari")
     public void menampilkan_nama_karyawan_yang_dicari(){
         Assert.assertEquals(laporanPage.getNamaUser(), "Muhammad Farhan Hilman");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Menampilkan nama karyawan yang dicari");
     }
 
     @Then("Menampilkan data karyawan sesuai tanggal yang diatur")
     public void menampilkan_data_karyawan_sesuai_tanggal_yang_diatur(){
         Assert.assertEquals(laporanPage.getTanggalIzinTerlambat(), "11 Jul 2024");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Menampilkan data karyawan sesuai tanggal yang diatur");
     }
 
     @Then("Menampilkan 5 data per page")
     public void menampilkan_5_data_per_page(){
         Assert.assertEquals(laporanPage.getInformationPage(), "1-5 of 53");
-        extentTest.log(LogStatus.PASS, "");
+        extentTest.log(LogStatus.PASS, "Menampilkan 5 data per page");
     }
 
     @Then("Menampilkan 10 data per page")

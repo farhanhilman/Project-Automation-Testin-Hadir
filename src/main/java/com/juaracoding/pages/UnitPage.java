@@ -23,10 +23,10 @@ public class UnitPage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Reset']")
+    @FindBy(xpath = "(//button[@type='button'])[4]")
     private WebElement resetButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Tambahkan']")
+    @FindBy(xpath = "(//button[@type='button'])[5]")
     private WebElement tambahkanButton;
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]/h6[1]")
@@ -65,13 +65,13 @@ public class UnitPage {
     @FindBy(xpath = "//button[normalize-space()='Batal']")
     private WebElement batalButton;
 
-    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[1]//*[name()='svg']")
+    @FindBy(xpath = "(//button[@type='button'])[6]")
     private WebElement titikTigaButton;
 
     @FindBy(xpath = "//div[@id='card-actions-menu']/div[3]/ul/li")
     private WebElement shiftButton;
 
-    @FindBy(xpath = "//body/div[4]/div[3]/ul[1]/li[1]")
+    @FindBy(xpath = "//div[@id='card-actions-menu']/div[3]/ul/li")
     private WebElement viewButton;
 
     @FindBy(xpath = "//div[@id='card-actions-menu']/div[3]/ul/li[2]")
@@ -107,17 +107,23 @@ public class UnitPage {
     @FindBy(xpath = "//button[@title='Go to first page']")
     private WebElement goToFirstPageButton;
 
+    @FindBy(xpath = "//p[@id='name-helper-text']")
+    private WebElement errorMessageInputName;
+
     @FindBy(xpath = "//p[@class='MuiTablePagination-displayedRows css-kim0d']")
     private WebElement informationPage;
 
-    @FindBy(xpath = "//button[normalize-space()='Tambahkan']")
+    @FindBy(xpath = "(//button[@type='button'])[5]")
     private WebElement tambahkanShiftButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Tambah']")
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
     private WebElement tambahShiftButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Batal']")
+    @FindBy(xpath = "(//button[@type='button'])[12]")
     private WebElement batalShiftButton;
+
+    @FindBy(xpath = "(//button[@type='button'])[13]")
+    private WebElement batalEditShiftButton;
 
     @FindBy(xpath = "//input[@id='name']")
     private WebElement namaShift;
@@ -131,15 +137,26 @@ public class UnitPage {
     @FindBy(xpath = "//button[normalize-space()='Tidak']")
     private WebElement tidakButton;
 
-    @FindBy(xpath = "//label[@role='button']")
+    @FindBy(xpath = "//input[@type='file']")
     private WebElement uploadImage;
 
     @FindBy(xpath = "//span[@class='ColorPicker-MuiButton-label']//div")
     private WebElement colourPickerButton;
 
-    @FindBy(xpath = "//button[normalize-space()='Atur']")
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
     private WebElement aturButton;
 
+    @FindBy(xpath = "(//button[@type='submit'])[2]")
+    private WebElement simpanEditUnitButton;
+
+    @FindBy(xpath = "(//button[@type='button'])[24]")
+    private WebElement batalEditUnitButton;
+
+    @FindBy(xpath = "//div[@id='mui-2']")
+    private WebElement opsiPageButton;
+
+    @FindBy(xpath = "(//button[@type='button'])[6]")
+    private WebElement titikTigaShiftButton;
 
     public void setSearchBox(String nama){
         searchBox.sendKeys(nama);
@@ -149,12 +166,28 @@ public class UnitPage {
         searchButton.click();
     }
 
+    public void clickBatalEditUnitButton(){
+        batalEditUnitButton.click();
+    }
+
+    public void clickSimpanEditUnitButton(){
+        simpanEditUnitButton.click();
+    }
+
+    public void clickOpsiPageButton(){
+        opsiPageButton.click();
+    }
+
     public void clickResetButton(){
         resetButton.click();
     }
 
     public void clickTambahkanButton(){
         tambahkanButton.click();
+    }
+
+    public void clickTitikTigaShiftButton(){
+        titikTigaShiftButton.click();
     }
 
     public String getDataNamaUnit(){
@@ -197,8 +230,6 @@ public class UnitPage {
     }
 
     public void clickTambahButton(){
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].click();", tambahButton);
         tambahButton.click();
     }
 
@@ -286,6 +317,10 @@ public class UnitPage {
         simpanShiftButton.click();
     }
 
+    public boolean isErrorMessageInputName(){
+        return errorMessageInputName.isDisplayed();
+    }
+
     public void clickYaButton(){
         yaButton.click();
     }
@@ -299,7 +334,13 @@ public class UnitPage {
     }
 
     public void clickAturButton(){
-        aturButton.click();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 100)");
+        js.executeScript("arguments[0].click();", aturButton);
+    }
+
+    public void clickBatalEditShiftButton(){
+        batalEditShiftButton.click();
     }
 
     public void deleteNamaShift(){

@@ -14,5 +14,8 @@ public class Constant {
 
     public final static String shiftURL = "https://staging-hadir.ptkta.com/management/unit/type-shift/16e320dd-06e6-4117-9cc6-507c013c638a";
 
+    public final static String logsURL = "https://staging-hadir.ptkta.com/logs/error";
+
+    public final static String userURL = "https://staging-hadir.ptkta.com/apps/absent";
 
 }
